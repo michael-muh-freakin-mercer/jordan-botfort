@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "owner": "Michael",
+  "last_edited_by_owner_on": "2026-10-20",
+  "broker": "alpaca",
+  "account_type": "paper",
+  "operating_mode": "paper",
+  "paper_trading_authorized": true,
+  "authorized_by_owner_on": "2026-10-20",
+  "capital_tier": 0,
+  "virtual_capital": {
+    "starting_capital_usd": 50.0,
+    "note": "Mirrors the real Robinhood Tier 0 test. All sizing, limits and returns use this virtual account, never the ~$100k paper balance."
+  },
+  "expected_equity_range_usd": {
+    "min": 0,
+    "max": 200
+  },
+  "instruments": {
+    "equities": true,
+    "crypto": true,
+    "options": false,
+    "options_level_max": 0
+  },
+  "prohibited": [
+    "withdrawals",
+    "transfers",
+    "deposits_by_agent",
+    "margin",
+    "short_selling",
+    "options",
+    "option_spreads",
+    "short_options",
+    "option_exercise",
+    "extended_hours_equity_orders",
+    "purchases_beyond_virtual_settled_cash",
+    "account_configuration_changes",
+    "bulk_close_or_cancel",
+    "live_trading",
+    "any_tool_outside_alpaca_paper_web_and_local_files"
+  ],
+  "loss_limits": {
+    "enabled": false,
+    "max_drawdown_from_peak_pct": 50,
+    "max_daily_loss_pct": 15,
+    "note": "Disabled at Tier 0, mirroring the owner's choice for the Robinhood test (2026-10-16). Computed and reported, not enforced."
+  },
+  "position_limits": {
+    "max_open_positions": 2,
+    "max_position_pct_of_equity": 60,
+    "max_crypto_positions": 1,
+    "max_crypto_exposure_pct": 60,
+    "max_positions_per_sector": 1,
+    "max_earnings_exposure_pct": 50,
+    "max_option_position_pct": 0,
+    "max_option_premium_pct": 0,
+    "min_cash_reserve_pct": 0,
+    "max_new_entries_per_run": 1,
+    "max_new_entries_per_day": 2
+  },
+  "owner_notes": "Alpaca paper twin of ../trading-bot (2026-10-20). Paper account configured with max_margin_multiplier 1 and no_shorting true; Alpaca's paper minimum options level is 3, so options are blocked by .claude/settings.json and scripts/order-guard.py. To read the first-run report before any order, set operating_mode to discovery."
+}

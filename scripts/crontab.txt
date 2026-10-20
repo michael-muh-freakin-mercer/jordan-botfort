@@ -1,0 +1,18 @@
+# Alpaca PAPER agent schedule. These lines go in the same crontab as ../trading-bot's, offset by a few minutes
+# so the two bots never start together. Append with:
+#   (crontab -l; sed -n '/^CRON_TZ/,$p' scripts/crontab.txt) | crontab -
+# CRON_TZ makes the times Eastern regardless of the machine's timezone.
+CRON_TZ=America/New_York
+SHELL=/bin/bash
+TBA=/home/michael/Artificial_idiot/trading-bot-alpaca
+
+# Hourly during the regular session, Mon–Fri: 09:45, 10:45, 11:45, 12:45, 13:45, 14:45, 15:45 ET.
+# The 15:45 run also cancels unfilled equity entries and writes the daily summary.
+45 9-15 * * 1-5   $TBA/scripts/run.sh hourly    >> $TBA/logs/cron.log 2>&1
+
+# Overnight crypto checks, every day including weekends.
+15 21 * * *       $TBA/scripts/run.sh overnight >> $TBA/logs/cron.log 2>&1
+15 3  * * *       $TBA/scripts/run.sh overnight >> $TBA/logs/cron.log 2>&1
+
+# Weekly strategy review (stronger model), Saturday 11:30 ET.
+30 11 * * 6       $TBA/scripts/run.sh weekly    >> $TBA/logs/cron.log 2>&1

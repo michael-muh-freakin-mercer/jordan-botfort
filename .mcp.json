@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "alpaca": {
+      "type": "stdio",
+      "command": "/home/michael/Artificial_idiot/trading-bot-alpaca/scripts/alpaca-mcp.sh",
+      "args": []
+    }
+  }
+}

@@ -1,0 +1,11 @@
+# Local Claude Code overrides (may contain machine-specific allow rules)
+.claude/settings.local.json
+# Lock and scratch
+state/.run.lock
+*.tmp
+__pycache__/
+# .mcp.json holds no secrets here (keys live in ~/.config/trading-bot-alpaca/paper.env), so it is committed.
+# API keys (scripts/run.sh runs `git add -A` after every cycle)
+papertrade-keys.md
+.env
+.env.*
