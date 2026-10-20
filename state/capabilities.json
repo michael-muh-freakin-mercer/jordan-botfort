@@ -1,1 +1,495 @@
-{"verified":false}
+{
+ "verified": true,
+ "verified_on": "2026-10-20T23:52:00Z",
+ "verified_by_run": "20261020T234442Z-first-run",
+ "account_masked": "***GU2S",
+ "account_type": "paper",
+ "paper_evidence": "account-number prefix is Alpaca's paper prefix; default $100,000 balance; account created 2026-10-20T21:14Z; MCP launched by scripts/alpaca-mcp.sh (paper-locked)",
+ "account_status": "ACTIVE",
+ "crypto_status": "ACTIVE",
+ "account_config": {
+  "max_margin_multiplier": "1",
+  "no_shorting": true,
+  "fractional_trading": true,
+  "suspend_trade": false,
+  "closing_transactions_only": false,
+  "disable_overnight_trading": false,
+  "ptp_no_exception_entry": false,
+  "options_trading_level": 3,
+  "shorting_enabled": false,
+  "multiplier": "1"
+ },
+ "account_flags_available": {
+  "daytrade_count": false,
+  "pattern_day_trader": false,
+  "trading_blocked": true,
+  "account_blocked": true,
+  "trade_suspended_by_user": true,
+  "transfers_blocked": true,
+  "note": "get_account_info (MCP 3.4.7) does not return daytrade_count or pattern_day_trader; the agent counts its own virtual day trades (risk.md \u00a75)."
+ },
+ "paper_cash_baseline_usd": 100000.0,
+ "paper_cash_baseline_ts": "2026-10-20T23:45:30Z",
+ "manual_positions_at_start": [],
+ "manual_orders_at_start": [],
+ "activities_at_start": 0,
+ "tool_inventory": {
+  "server": "alpaca (alpaca-mcp-server, expected 3.4.7)",
+  "present_matches_expected": true,
+  "tool_diff": {
+   "expected_but_absent": [
+    "delete_watchlist_by_id"
+   ],
+   "absent_and_denied_as_expected": [
+    "place_option_order",
+    "exercise_options_position",
+    "do_not_exercise_options_position",
+    "create_locate",
+    "update_account_config",
+    "close_position",
+    "close_all_positions",
+    "cancel_all_orders",
+    "replace_order_by_id"
+   ],
+   "unexpected_present": [],
+   "note": "All expected read-only and permitted writing tools are exposed. delete_watchlist_by_id is not exposed (denied list in procedures \u00a71.1 names it; harmless). No robinhood-trading or other connector tools are visible in this session."
+  }
+ },
+ "tool_params": {
+  "place_stock_order": {
+   "symbol": "symbol",
+   "side": "side (buy|sell)",
+   "qty": "qty (string; fractional up to 9 dp)",
+   "notional": "notional (string; market + day only)",
+   "type": "type (market|limit|stop|stop_limit|trailing_stop; agent uses market|limit only)",
+   "limit_price": "limit_price (string)",
+   "time_in_force": "time_in_force (day|gtc|opg|cls|ioc|fok; default day)",
+   "client_order_id": "client_order_id",
+   "extended_hours": "extended_hours (bool, default false; always false)",
+   "order_class": "order_class (never set)",
+   "forbidden": [
+    "stop_price",
+    "trail_price",
+    "trail_percent",
+    "take_profit_limit_price",
+    "stop_loss_stop_price",
+    "stop_loss_limit_price",
+    "advanced_instructions"
+   ]
+  },
+  "place_crypto_order": {
+   "symbol": "symbol (pair, e.g. BTC/USD)",
+   "side": "side",
+   "qty": "qty (string)",
+   "notional": "notional (string; market only)",
+   "type": "type (market|limit|stop_limit; agent uses limit)",
+   "limit_price": "limit_price (string)",
+   "time_in_force": "time_in_force (gtc|ioc; default gtc)",
+   "client_order_id": "client_order_id",
+   "forbidden": [
+    "stop_price"
+   ]
+  },
+  "get_order_by_id": {
+   "order_id": "order_id (uuid)"
+  },
+  "get_order_by_client_id": {
+   "client_order_id": "client_order_id"
+  },
+  "cancel_order_by_id": {
+   "order_id": "order_id (uuid)"
+  },
+  "get_orders": {
+   "status": "open|closed|all",
+   "symbols": "comma-separated; crypto as BTCUSD form per schema",
+   "after": "timestamp",
+   "limit": "max 500"
+  },
+  "get_stock_latest_quote": {
+   "symbols": "csv",
+   "feed": "iex|delayed_sip|sip(403)"
+  },
+  "get_stock_snapshot": {
+   "symbols": "csv",
+   "feed": "iex|delayed_sip|sip(403)"
+  },
+  "get_stock_bars": {
+   "symbols": "csv",
+   "timeframe": "1Day|1Hour|1Week|...",
+   "days": "lookback",
+   "start": "RFC3339",
+   "end": "RFC3339",
+   "feed": "sip|iex",
+   "limit": "total across symbols"
+  },
+  "get_crypto_latest_quote": {
+   "symbols": "csv pairs",
+   "loc": "us (required)"
+  },
+  "get_crypto_bars": {
+   "symbols": "csv pairs",
+   "timeframe": "1Day|1Hour",
+   "days": "lookback",
+   "limit": "total"
+  },
+  "get_open_position": {
+   "symbol_or_asset_id": "symbol"
+  },
+  "get_asset": {
+   "symbol_or_asset_id": "symbol or pair"
+  },
+  "notional_keys": [
+   "notional"
+  ],
+  "quantity_keys": [
+   "qty"
+  ],
+  "price_keys": [
+   "limit_price"
+  ]
+ },
+ "probes": [
+  {
+   "tool": "get_account_info",
+   "params": {},
+   "result": "worked"
+  },
+  {
+   "tool": "get_account_config",
+   "params": {},
+   "result": "worked"
+  },
+  {
+   "tool": "get_all_positions",
+   "params": {},
+   "result": "worked (empty)"
+  },
+  {
+   "tool": "get_orders",
+   "params": {
+    "status": "all",
+    "limit": 100
+   },
+   "result": "worked (empty)"
+  },
+  {
+   "tool": "get_account_activities",
+   "params": {
+    "page_size": 50
+   },
+   "result": "worked (empty)"
+  },
+  {
+   "tool": "get_clock",
+   "params": {},
+   "result": "worked (closed; next open 2026-10-21 09:30 ET)"
+  },
+  {
+   "tool": "get_calendar",
+   "params": {
+    "start": "2026-10-19",
+    "end": "2026-10-30"
+   },
+   "result": "worked (10 sessions, normal hours, settlement T+1)"
+  },
+  {
+   "tool": "get_stock_latest_quote",
+   "params": {
+    "symbols": "SPY,AAPL"
+   },
+   "result": "worked; default feed iex; after hours ask=0 (unusable)"
+  },
+  {
+   "tool": "get_stock_snapshot",
+   "params": {
+    "symbols": "SPY,AAPL"
+   },
+   "result": "worked (default = iex)"
+  },
+  {
+   "tool": "get_stock_snapshot",
+   "params": {
+    "symbols": "SPY,AAPL",
+    "feed": "sip"
+   },
+   "result": "failed: HTTP 403 subscription does not permit querying recent SIP data"
+  },
+  {
+   "tool": "get_stock_snapshot",
+   "params": {
+    "symbols": "SPY,AAPL",
+    "feed": "iex"
+   },
+   "result": "worked"
+  },
+  {
+   "tool": "get_stock_snapshot",
+   "params": {
+    "symbols": "SPY,AAPL",
+    "feed": "delayed_sip"
+   },
+   "result": "worked (15-min delayed consolidated; quotes two-sided after hours)"
+  },
+  {
+   "tool": "get_stock_bars",
+   "params": {
+    "symbols": "SPY",
+    "timeframe": "1Day",
+    "days": 100,
+    "feed": "iex"
+   },
+   "result": "worked (71 bars, IEX volume ~3.5% of SIP)"
+  },
+  {
+   "tool": "get_stock_bars",
+   "params": {
+    "symbols": "SPY",
+    "timeframe": "1Day",
+    "days": 100,
+    "feed": "sip",
+    "end": "2026-10-20T23:20:00Z"
+   },
+   "result": "worked (71 bars, consolidated volume)"
+  },
+  {
+   "tool": "get_stock_bars",
+   "params": {
+    "symbols": "SPY",
+    "timeframe": "1Day",
+    "days": 3
+   },
+   "result": "worked (no feed/end given: consolidated volume returned)"
+  },
+  {
+   "tool": "get_stock_bars",
+   "params": {
+    "symbols": "AAPL",
+    "timeframe": "1Hour",
+    "days": 1,
+    "feed": "iex"
+   },
+   "result": "worked (7 bars)"
+  },
+  {
+   "tool": "get_asset",
+   "params": {
+    "symbol_or_asset_id": "AAPL"
+   },
+   "result": "worked (tradable, fractionable)"
+  },
+  {
+   "tool": "get_asset",
+   "params": {
+    "symbol_or_asset_id": "SPY"
+   },
+   "result": "worked (tradable, fractionable)"
+  },
+  {
+   "tool": "get_asset",
+   "params": {
+    "symbol_or_asset_id": "BTC/USD"
+   },
+   "result": "worked (tradable, fractionable, min_order_size 0.000012261)"
+  },
+  {
+   "tool": "get_asset",
+   "params": {
+    "symbol_or_asset_id": "ETH/USD"
+   },
+   "result": "worked"
+  },
+  {
+   "tool": "get_asset",
+   "params": {
+    "symbol_or_asset_id": "SOL/USD"
+   },
+   "result": "worked"
+  },
+  {
+   "tool": "get_crypto_latest_quote",
+   "params": {
+    "symbols": "BTC/USD,ETH/USD,SOL/USD",
+    "loc": "us"
+   },
+   "result": "worked"
+  },
+  {
+   "tool": "get_crypto_bars",
+   "params": {
+    "symbols": "BTC/USD",
+    "timeframe": "1Day",
+    "days": 30
+   },
+   "result": "worked (30 bars)"
+  },
+  {
+   "tool": "get_crypto_bars",
+   "params": {
+    "symbols": "BTC/USD",
+    "timeframe": "1Hour",
+    "days": 7,
+    "limit": 200
+   },
+   "result": "worked (~167 bars, next_page_token present)"
+  },
+  {
+   "tool": "get_market_movers",
+   "params": {
+    "market_type": "stocks",
+    "top": 50
+   },
+   "result": "worked"
+  },
+  {
+   "tool": "get_most_active_stocks",
+   "params": {
+    "by": "volume",
+    "top": 50
+   },
+   "result": "worked"
+  },
+  {
+   "tool": "get_corporate_action_announcements",
+   "params": {
+    "ca_types": [
+     "Dividend",
+     "Split"
+    ],
+    "since": "2026-10-20",
+    "until": "2026-11-03",
+    "symbol": "AAPL"
+   },
+   "result": "worked (empty)"
+  },
+  {
+   "tool": "get_news",
+   "params": {
+    "symbols": "AAPL",
+    "limit": 3,
+    "include_content": false
+   },
+   "result": "worked"
+  },
+  {
+   "tool": "get_watchlists",
+   "params": {},
+   "result": "worked (empty)"
+  },
+  {
+   "tool": "search_alpaca_docs / fetch_alpaca_doc",
+   "params": {
+    "ids": [
+     "us/fractional-trading",
+     "us/crypto-fees",
+     "us/paper-trading",
+     "us/crypto-orders"
+    ]
+   },
+   "result": "worked"
+  }
+ ],
+ "data_feed": {
+  "realtime_quotes": "iex",
+  "sip_realtime": "not permitted (HTTP 403)",
+  "consolidated_daily_bars": "sip historical (request with end >= 15 min in the past, or omit feed/end)",
+  "consolidated_snapshot": "delayed_sip (15 minutes old)",
+  "rules": {
+   "volume_pace": "numerator = today's volume from get_stock_snapshot feed=delayed_sip dailyBar.v; denominator = 30-session average volume from get_stock_bars 1Day feed=sip. Both consolidated. Elapsed fraction measured to (now - 15 min).",
+   "dollar_volume_filter": "get_stock_bars 1Day feed=sip, sum(v*vw)/30 over the 30 sessions before today",
+   "spread_check_and_order_pricing": "get_stock_latest_quote feed=iex (real-time). Both sides of the spread from IEX. IEX may show a wider spread than NBBO, and outside the session the IEX ask can be 0 (then: no order).",
+   "price_for_rules": "IEX latest trade/quote (real time); historical levels from SIP closes"
+  },
+  "observed_2026-10-20": {
+   "spy_volume_iex_vs_sip": [
+    1235267,
+    35088046
+   ],
+   "iex_share_pct": 3.52,
+   "spy_spread_pct": {
+    "iex": "n/a after hours (ask 0)",
+    "delayed_sip": 0.0065
+   },
+   "aapl_spread_pct": {
+    "iex": "n/a after hours (ask 0)",
+    "delayed_sip": 0.0444
+   },
+   "note": "Spreads during the regular session on IEX were not observable in this after-hours run; first session run should record them."
+  }
+ },
+ "crypto_pairs": {
+  "BTC": "BTC/USD",
+  "ETH": "ETH/USD",
+  "SOL": "SOL/USD"
+ },
+ "crypto_min_order": {
+  "BTC/USD": {
+   "min_order_size": "0.000012261",
+   "usd_at_first_run": 1.02
+  },
+  "ETH/USD": {
+   "min_order_size": "0.00041936",
+   "usd_at_first_run": 1.03
+  },
+  "SOL/USD": {
+   "min_order_size": "0.009558127",
+   "usd_at_first_run": 1.02
+  },
+  "min_trade_increment": "0.000000001"
+ },
+ "crypto_history_source": {
+  "daily": "get_crypto_bars symbols=BTC/USD timeframe=1Day days=30",
+  "hourly": "get_crypto_bars symbols=<pairs> timeframe=1Hour days=7 limit=600",
+  "note": "Alpaca venue volume is thin (a few BTC/day); prices track the market but bar volume is not a market-wide measure."
+ },
+ "crypto_fee_pct_per_side": 0.25,
+ "crypto_fee_source": "docs us/crypto-fees: Tier 1 (0-100k 30D volume) taker 0.25%, maker 0.15%; fee charged in the received asset; posted end of day as CFEE/FEE activities",
+ "paper_charges_crypto_fees": null,
+ "paper_charges_crypto_fees_note": "Not stated in docs; verify via get_account_activities activity_types=CFEE,FEE the day after the first crypto fill.",
+ "order_mechanics": {
+  "equity_notional_orders": "supported only for type=market with time_in_force=day (MCP schema; docs us/fractional-trading)",
+  "fractional_limit_supported": true,
+  "fractional_limit_tif": "day",
+  "fractional_limit_how": "type=limit with fractional qty (up to 9 dp), time_in_force=day; notional cannot be combined with limit in this MCP",
+  "fractional_limit_evidence": "docs us/fractional-trading: 'Limit orders are supported for both fractional and notional orders' and 'market, limit, stop & stop limit orders with a time in force=Day'. The same page's disclaimer also says fractional shares 'can only be bought or sold with market orders during normal market hours'. Documented, not yet exercised; the first fractional limit order is the real test.",
+  "equity_tif": [
+   "day",
+   "gtc",
+   "opg",
+   "cls",
+   "ioc",
+   "fok"
+  ],
+  "equity_tif_used": "day",
+  "crypto_types": [
+   "market",
+   "limit",
+   "stop_limit"
+  ],
+  "crypto_tif": [
+   "gtc",
+   "ioc"
+  ],
+  "crypto_tif_used": "gtc",
+  "crypto_notional": "market orders only (MCP schema); limit orders by qty",
+  "equity_min_fractional_usd": 1.0,
+  "paper_partial_fills": "yes: docs us/paper-trading, eligible orders receive a partial fill of random size 10% of the time",
+  "paper_fill_model": "fills against NBBO when marketable; no market impact, no queue position, no price improvement; quantity not checked against NBBO size",
+  "paper_not_simulated": [
+   "regulatory fees",
+   "dividends",
+   "borrow fees",
+   "market impact",
+   "latency slippage"
+  ],
+  "client_order_id": "accepted on both order tools; duplicates rejected by Alpaca",
+  "docs_pages": [
+   "us/fractional-trading",
+   "us/crypto-fees",
+   "us/paper-trading",
+   "us/crypto-orders"
+  ]
+ },
+ "watchlist_alpaca": "TB-watch not created (optional); state/watchlist.json is the source of truth",
+ "benchmark_file": "state/benchmark.json",
+ "scan_config_file": "state/scan-config.json"
+}

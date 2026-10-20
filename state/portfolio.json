@@ -1,1 +1,54 @@
-{"ts":null,"run_id":null,"account_masked":null,"basis":"virtual","equity_usd":0,"cash_usd":0,"settled_cash_usd":0,"paper_account":{},"paper_start":null,"peak_equity_usd":0,"day_start_equity_usd":0,"deposits_total_usd":50.00,"entries_today":0,"entries_paused_until":null,"regime":{},"positions":[],"open_orders":[],"reconciliation":"never","last_daily_summary":null}
+{
+ "ts": "2026-10-20T23:52:00Z",
+ "run_id": "20261020T234442Z-first-run",
+ "account_masked": "***GU2S",
+ "basis": "virtual",
+ "equity_usd": 50.0,
+ "cash_usd": 50.0,
+ "settled_cash_usd": 50.0,
+ "paper_account": {
+  "cash": 100000.0,
+  "equity": 100000.0
+ },
+ "paper_start": "2026-10-20T23:52:00Z",
+ "peak_equity_usd": 50.0,
+ "day_start_equity_usd": 50.0,
+ "deposits_total_usd": 50.0,
+ "entries_today": 0,
+ "entries_paused_until": null,
+ "regime": {
+  "risk_on_equity": true,
+  "risk_on_crypto": false,
+  "high_vol": false,
+  "inputs": {
+   "spy_last_close": 769.05,
+   "spy_sma50": 768.2866,
+   "spy_sma20": 770.6165,
+   "spy_sma20_5_sessions_ago": 769.869,
+   "spy_pct_above_sma50": 0.099,
+   "spy_intraday_change_pct": 0.335,
+   "spy_source": "get_stock_bars SPY 1Day feed=sip, 71 sessions to 2026-10-20",
+   "btc_mid": 83003.674,
+   "btc_sma20_daily": 83214.98,
+   "btc_pct_vs_sma20": -0.254,
+   "btc_source": "get_crypto_bars BTC/USD 1Day days=30 (last bar forming) + get_crypto_latest_quote loc=us 2026-10-20T23:46:40Z",
+   "computed": "2026-10-20T23:52:00Z"
+  }
+ },
+ "account_flags": {
+  "status": "ACTIVE",
+  "crypto_status": "ACTIVE",
+  "trading_blocked": false,
+  "account_blocked": false,
+  "trade_suspended_by_user": false,
+  "transfers_blocked": false,
+  "daytrade_count": null,
+  "pattern_day_trader": null,
+  "virtual_daytrades_last_5_sessions": 0,
+  "note": "daytrade_count / pattern_day_trader not exposed by get_account_info"
+ },
+ "positions": [],
+ "open_orders": [],
+ "reconciliation": "ok",
+ "last_daily_summary": null
+}

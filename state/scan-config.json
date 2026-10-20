@@ -1,0 +1,136 @@
+{
+ "version": 1,
+ "defined_by": "20261020T234442Z-first-run",
+ "defined_on": "2026-10-20T23:52:00Z",
+ "session_runs_only": true,
+ "sources": [
+  {
+   "tool": "get_market_movers",
+   "params": {
+    "market_type": "stocks",
+    "top": 50
+   },
+   "use": "gainers list only (price and percent_change come with it)"
+  },
+  {
+   "tool": "get_most_active_stocks",
+   "params": {
+    "by": "volume",
+    "top": 25
+   },
+   "use": "symbols only; top reduced from 50 to 25 to keep the snapshot step small"
+  },
+  {
+   "tool": "file",
+   "params": {
+    "path": "state/watchlist.json"
+   },
+   "use": "all symbols"
+  }
+ ],
+ "filters_in_order": [
+  {
+   "step": 1,
+   "name": "symbol_pattern",
+   "tool": "python3",
+   "rule": "drop '.WS', '.RT', and 5-letter symbols ending W/R/U/Z (warrants, rights, units)"
+  },
+  {
+   "step": 2,
+   "name": "price_and_change",
+   "tool": "get_stock_snapshot feed=delayed_sip (one batched call, only for symbols without a movers price)",
+   "rule": "dailyBar.c (or movers price) >= equity.universe.min_price; change % = c/prevDailyBar.c - 1"
+  },
+  {
+   "step": 3,
+   "name": "rank",
+   "tool": "python3",
+   "rule": "sort by today's change %, highest first; take the top 8 into the expensive filters"
+  },
+  {
+   "step": 4,
+   "name": "avg_dollar_volume_30d",
+   "tool": "get_stock_bars timeframe=1Day days=44 feed=sip end=now-16min (one batched call, limit 400)",
+   "rule": "sum(v*vw)/30 over the 30 sessions before today >= equity.universe.min_avg_dollar_volume_usd"
+  },
+  {
+   "step": 5,
+   "name": "asset_check",
+   "tool": "get_asset (per survivor)",
+   "rule": "tradable; fractionable if the order would be fractional; name not matching leveraged/inverse ETF terms (2X, 3X, Ultra, Bull, Bear, Inverse, Short, -1X)"
+  },
+  {
+   "step": 6,
+   "name": "pct_below_52w_high",
+   "tool": "get_stock_bars timeframe=1Week start=today-365d feed=sip (one batched call for survivors)",
+   "rule": "close within equity.universe.max_pct_below_52w_high of max weekly high, unless \u00a73b earnings-gap applies",
+   "deviation_note": "strategy.md \u00a71 names 1Day bars; max of weekly highs equals max of daily highs over the same weeks (window edge differs by < 1 week) at about 1/5 of the data. Proposed in state/proposals.md."
+  },
+  {
+   "step": 7,
+   "name": "spread",
+   "tool": "get_stock_latest_quote feed=iex",
+   "rule": "spread <= equity.entry.max_spread_pct (evaluated at entry time, not in the scan)"
+  },
+  {
+   "step": 8,
+   "name": "cap",
+   "rule": "stop after equity.max_candidates_per_run survivors; those go to strategy.md \u00a73a/\u00a73b"
+  }
+ ],
+ "first_run_result": {
+  "ts": "2026-10-20T23:47:00Z",
+  "note": "run after the close; movers lists and snapshots reflect the 2026-10-20 session; first run used most_active top=50",
+  "counts": {
+   "gainers": 50,
+   "most_active": 50,
+   "union": 93,
+   "after_symbol_pattern": 64,
+   "after_price_ge_5": 34,
+   "ranked_into_expensive_filters": 10,
+   "after_avg_dollar_volume_20m": 6,
+   "after_leveraged_etf_exclusion": 5,
+   "after_52w_high_within_10pct": 1,
+   "after_tradable_fractionable": 1
+  },
+  "ranked_top10": [
+   "SAIQ",
+   "ATGL",
+   "BRZE",
+   "MYGN",
+   "CD",
+   "CCG",
+   "NU",
+   "AAL",
+   "TSLL",
+   "SOFI"
+  ],
+  "adv30_usd_m": {
+   "SAIQ": 20.93,
+   "ATGL": 0.05,
+   "BRZE": 66.09,
+   "MYGN": 8.03,
+   "CD": 1.62,
+   "CCG": 0.33,
+   "NU": 1128.2,
+   "AAL": 851.88,
+   "TSLL": 583.97,
+   "SOFI": 752.1
+  },
+  "excluded_leveraged": [
+   "TSLL (Direxion Daily TSLA Bull 2X)"
+  ],
+  "pct_below_52w_high": {
+   "SAIQ": 47.18,
+   "BRZE": 0.09,
+   "NU": 20.5,
+   "AAL": 35.55,
+   "SOFI": 55.15
+  },
+  "survivors": [
+   "BRZE"
+  ],
+  "observation": "BRZE +51.7% on 64.8M shares with a 45.26-45.61 intraday range: consistent with a pending cash acquisition (price pinned to a deal price). Not verified. A breakout entry on a deal-pinned stock has little upside; see proposals."
+ },
+ "token_cost_note": "First run: the 50-symbol delayed_sip snapshot and the 10-symbol daily bars were the largest responses (~20k and ~25k tokens). Hourly runs should stay within one snapshot call of <= 30 symbols and bars for <= 8 symbols."
+}

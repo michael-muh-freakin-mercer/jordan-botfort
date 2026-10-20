@@ -1,1 +1,26 @@
-{"updated":null,"method":"ledger","paper_cash_baseline_usd":null,"cash_cross_check":null,"entries":[],"unsettled_total_usd":0,"committed_to_open_buys_usd":0,"settled_cash_usd":0}
+{
+ "updated": "2026-10-20T23:52:00Z",
+ "method": "ledger",
+ "paper_cash_baseline_usd": 100000.0,
+ "cash_cross_check": {
+  "ts": "2026-10-20T23:52:00Z",
+  "paper_cash": 100000.0,
+  "paper_cash_delta": 0.0,
+  "ledger_cash_delta": 0.0,
+  "ok": true
+ },
+ "entries": [
+  {
+   "ts": "2026-10-20T23:52:00Z",
+   "symbol": null,
+   "type": "deposit",
+   "amount_usd": 50.0,
+   "settles_on": "2026-10-20",
+   "settled": true,
+   "note": "virtual starting capital, Tier 0 (state/authorization.json virtual_capital.starting_capital_usd)"
+  }
+ ],
+ "unsettled_total_usd": 0.0,
+ "committed_to_open_buys_usd": 0.0,
+ "settled_cash_usd": 50.0
+}

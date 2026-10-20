@@ -1,0 +1,15 @@
+{
+ "paper_start": "2026-10-20T23:52:00Z",
+ "set_by_run": "20261020T234442Z-first-run",
+ "SPY": {
+  "price": 769.05,
+  "basis": "2026-10-20 regular-session close",
+  "source": "get_stock_bars SPY 1Day feed=sip"
+ },
+ "BTC": {
+  "price": 83003.674,
+  "basis": "mid of bid 82991.648 / ask 83015.70 at 2026-10-20T23:46:40Z",
+  "source": "get_crypto_latest_quote BTC/USD loc=us"
+ },
+ "note": "Benchmark returns are buy-and-hold from these prices; paper results only."
+}
