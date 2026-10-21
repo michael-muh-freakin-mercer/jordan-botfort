@@ -20,3 +20,5 @@
 - **Risk added**: none to the account; it narrows the universe slightly.
 - **Change**: `config/strategy.md` §1 (dollar-volume definition).
 - **Recommendation**: accept the median version.
+
+- [2026-10-21] Paper charged the 0.25% crypto taker fee in kind on the first ETH/USD fill (net qty 0.011847307 vs 0.011877 ordered). Please set paper_charges_crypto_fees to true in state/capabilities.json (the agent may not edit it).

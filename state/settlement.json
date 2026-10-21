@@ -1,12 +1,12 @@
 {
- "updated": "2026-10-20T23:52:00Z",
+ "updated": "2026-10-21T18:50:00Z",
  "method": "ledger",
  "paper_cash_baseline_usd": 100000.0,
  "cash_cross_check": {
-  "ts": "2026-10-20T23:52:00Z",
-  "paper_cash": 100000.0,
-  "paper_cash_delta": 0.0,
-  "ledger_cash_delta": 0.0,
+  "ts": "2026-10-21T18:50:00Z",
+  "paper_cash": 99970.15,
+  "paper_cash_delta": -29.85,
+  "ledger_cash_delta": -29.8541,
   "ok": true
  },
  "entries": [
@@ -18,9 +18,18 @@
    "settles_on": "2026-10-20",
    "settled": true,
    "note": "virtual starting capital, Tier 0 (state/authorization.json virtual_capital.starting_capital_usd)"
+  },
+  {
+   "ts": "2026-10-21T18:50:00Z",
+   "symbol": "ETH/USD",
+   "type": "buy",
+   "amount_usd": -29.8541,
+   "settles_on": null,
+   "settled": true,
+   "note": "intent 68adc72c-a5d6-49f6-9ad6-e61c948253a7; fee $0.0746 taken in kind (ETH), not deducted from cash"
   }
  ],
  "unsettled_total_usd": 0.0,
  "committed_to_open_buys_usd": 0.0,
- "settled_cash_usd": 50.0
+ "settled_cash_usd": 20.1459
 }
