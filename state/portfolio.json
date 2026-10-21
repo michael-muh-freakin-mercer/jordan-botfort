@@ -1,6 +1,6 @@
 {
- "ts": "2026-10-20T23:52:00Z",
- "run_id": "20261020T234442Z-first-run",
+ "ts": "2026-10-21T18:37:00Z",
+ "run_id": "20261021T183548Z-hourly",
  "account_masked": "***GU2S",
  "basis": "virtual",
  "equity_usd": 50.0,
@@ -49,6 +49,6 @@
  },
  "positions": [],
  "open_orders": [],
- "reconciliation": "ok",
+ "reconciliation": "unexplained_orders",
  "last_daily_summary": null
 }
