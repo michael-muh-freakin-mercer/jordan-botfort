@@ -1,9 +1,9 @@
 {
- "updated": "2026-10-21T18:50:00Z",
+ "updated": "2026-10-21T19:06:00Z",
  "method": "ledger",
  "paper_cash_baseline_usd": 100000.0,
  "cash_cross_check": {
-  "ts": "2026-10-21T18:50:00Z",
+  "ts": "2026-10-21T19:06:00Z",
   "paper_cash": 99970.15,
   "paper_cash_delta": -29.85,
   "ledger_cash_delta": -29.8541,

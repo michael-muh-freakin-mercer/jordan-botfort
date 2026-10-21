@@ -1,14 +1,14 @@
 {
- "ts": "2026-10-21T18:50:00Z",
- "run_id": "20261021T184500Z-hourly",
+ "ts": "2026-10-21T19:06:00Z",
+ "run_id": "20261021T190351Z-hourly",
  "account_masked": "***GU2S",
  "basis": "virtual",
- "equity_usd": 49.9455,
+ "equity_usd": 49.6137,
  "cash_usd": 20.1459,
  "settled_cash_usd": 20.1459,
  "paper_account": {
   "cash": 99970.15,
-  "equity": 99999.95
+  "equity": 99999.6
  },
  "paper_start": "2026-10-20T23:52:00Z",
  "peak_equity_usd": 50.0,
@@ -28,12 +28,13 @@
    "spy_pct_above_sma50": 0.099,
    "spy_intraday_change_pct": 0.335,
    "spy_source": "get_stock_bars SPY 1Day feed=sip, 71 sessions to 2026-10-20",
-   "btc_mid": 84634.0,
+   "btc_mid": 84244.7425,
    "btc_sma20_daily": 83243.6,
-   "btc_pct_vs_sma20": 1.67,
+   "btc_pct_vs_sma20": 1.2,
    "btc_source": "get_crypto_bars BTC/USD 1Day days=30 (last bar forming) + get_crypto_latest_quote loc=us 2026-10-20T23:46:40Z",
    "computed": "2026-10-21T18:50:00Z"
-  }
+  },
+  "computed": "2026-10-21T19:06:00Z"
  },
  "account_flags": {
   "status": "ACTIVE",
@@ -57,9 +58,9 @@
    "entry_intent_id": "68adc72c-a5d6-49f6-9ad6-e61c948253a7",
    "peak_price": 2515.308,
    "current_stop": 2263.78,
-   "last_price": 2515.308,
-   "unrealized_pnl_usd": -0.0545,
-   "unrealized_pnl_pct": -0.183,
+   "last_price": 2487.3,
+   "unrealized_pnl_usd": -0.3117,
+   "unrealized_pnl_pct": -1.047,
    "sessions_held": 0,
    "earnings_exposure": false,
    "sector": "crypto"
