@@ -1,4 +1,4 @@
-# trading-bot-alpaca — paper twin of `../trading-bot`
+# Jordan Botfort — paper twin of `../trading-bot`
 
 Same agent, same "Concentrated Momentum" strategy and Tier 0 limits as the Robinhood bot, but orders go to an **Alpaca paper account**. The paper account holds ~$100k of fake cash; the agent trades a **virtual $50** inside it under cash-account rules, so results are comparable with the real Robinhood test. Nothing here can touch real money: the MCP launcher refuses non-paper keys, and the Robinhood MCP is denied.
 
