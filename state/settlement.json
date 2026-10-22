@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-21T19:50:00Z",
+ "updated": "2026-10-22T13:50:00Z",
  "method": "ledger",
  "paper_cash_baseline_usd": 100000.0,
  "cash_cross_check": {
@@ -27,9 +27,18 @@
    "settles_on": null,
    "settled": true,
    "note": "intent 68adc72c-a5d6-49f6-9ad6-e61c948253a7; fee $0.0746 taken in kind (ETH), not deducted from cash"
+  },
+  {
+   "ts": "2026-10-22T13:50:00Z",
+   "symbol": "ETH/USD",
+   "type": "sell",
+   "amount_usd": 28.3814,
+   "settles_on": null,
+   "settled": true,
+   "note": "intent 885596fe; est fee 0.25% = 0.0711 deducted; verify against paper cash next run"
   }
  ],
  "unsettled_total_usd": 0.0,
  "committed_to_open_buys_usd": 0.0,
- "settled_cash_usd": 20.1459
+ "settled_cash_usd": 48.5273
 }
