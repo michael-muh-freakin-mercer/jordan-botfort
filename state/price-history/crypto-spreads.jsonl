@@ -10,3 +10,6 @@
 {"ts": "2026-10-21T19:50:00Z", "symbol": "BTC/USD", "spread_pct": 0.0198, "venue": "alpaca"}
 {"ts": "2026-10-21T19:50:00Z", "symbol": "ETH/USD", "spread_pct": 0.0159, "venue": "alpaca"}
 {"ts": "2026-10-21T19:50:00Z", "symbol": "SOL/USD", "spread_pct": 0.0767, "venue": "alpaca"}
+{"ts": "2026-10-22T01:15:10Z", "symbol": "BTC/USD", "spread_pct": 0.036, "venue": "alpaca"}
+{"ts": "2026-10-22T01:15:10Z", "symbol": "ETH/USD", "spread_pct": 0.0311, "venue": "alpaca"}
+{"ts": "2026-10-22T01:15:10Z", "symbol": "SOL/USD", "spread_pct": 0.0764, "venue": "alpaca"}
