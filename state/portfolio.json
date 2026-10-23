@@ -1,6 +1,6 @@
 {
- "ts": "2026-10-23T17:50:00Z",
- "run_id": "20261023T174500Z-hourly",
+ "ts": "2026-10-23T18:50:00Z",
+ "run_id": "20261023T184500Z-hourly",
  "account_masked": "***GU2S",
  "basis": "virtual",
  "equity_usd": 48.5273,
@@ -28,13 +28,13 @@
    "spy_pct_above_sma50": 0.099,
    "spy_intraday_change_pct": -1.3,
    "spy_source": "get_stock_bars SPY 1Day feed=sip, 71 sessions to 2026-10-20",
-   "btc_mid": 81478.6,
+   "btc_mid": 81379.3,
    "btc_sma20_daily": 83171.5,
    "btc_pct_vs_sma20": -2.34,
    "btc_source": "get_crypto_bars BTC/USD 1Day days=30 (last bar forming) + get_crypto_latest_quote loc=us 2026-10-20T23:46:40Z",
    "computed": "2026-10-23T16:50:00Z"
   },
-  "computed": "2026-10-23T17:50:00Z"
+  "computed": "2026-10-23T18:50:00Z"
  },
  "account_flags": {
   "status": "ACTIVE",
