@@ -1,6 +1,6 @@
 {
- "ts": "2026-10-22T17:50:00Z",
- "run_id": "20261022T174500Z-hourly",
+ "ts": "2026-10-23T16:50:00Z",
+ "run_id": "20261023T164500Z-hourly",
  "account_masked": "***GU2S",
  "basis": "virtual",
  "equity_usd": 48.5273,
@@ -12,29 +12,29 @@
  },
  "paper_start": "2026-10-20T23:52:00Z",
  "peak_equity_usd": 50.0,
- "day_start_equity_usd": 50.0,
+ "day_start_equity_usd": 48.5273,
  "deposits_total_usd": 50.0,
- "entries_today": 1,
+ "entries_today": 0,
  "entries_paused_until": null,
  "regime": {
-  "risk_on_equity": true,
+  "risk_on_equity": false,
   "risk_on_crypto": false,
   "high_vol": false,
   "inputs": {
-   "spy_last_close": 773.09,
-   "spy_sma50": 768.34,
-   "spy_sma20": 770.88,
-   "spy_sma20_5_sessions_ago": 770.65,
+   "spy_last_close": 763.96,
+   "spy_sma50": 768.17,
+   "spy_sma20": 770.72,
+   "spy_sma20_5_sessions_ago": 771.11,
    "spy_pct_above_sma50": 0.099,
    "spy_intraday_change_pct": -1.3,
    "spy_source": "get_stock_bars SPY 1Day feed=sip, 71 sessions to 2026-10-20",
-   "btc_mid": 81227.625,
+   "btc_mid": 81661.7,
    "btc_sma20_daily": 83171.5,
    "btc_pct_vs_sma20": -2.34,
    "btc_source": "get_crypto_bars BTC/USD 1Day days=30 (last bar forming) + get_crypto_latest_quote loc=us 2026-10-20T23:46:40Z",
-   "computed": "2026-10-22T17:50:00Z"
+   "computed": "2026-10-23T16:50:00Z"
   },
-  "computed": "2026-10-22T17:50:00Z"
+  "computed": "2026-10-23T16:50:00Z"
  },
  "account_flags": {
   "status": "ACTIVE",
