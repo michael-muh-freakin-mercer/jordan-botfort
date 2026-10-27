@@ -1,6 +1,6 @@
 {
- "ts": "2026-10-26T03:25:00Z",
- "run_id": "20261026T032040Z-overnight",
+ "ts": "2026-10-27T16:50:00Z",
+ "run_id": "20261027T164500Z-hourly",
  "account_masked": "***GU2S",
  "basis": "virtual",
  "equity_usd": 48.5273,
@@ -21,20 +21,20 @@
   "risk_on_crypto": false,
   "high_vol": false,
   "inputs": {
-   "spy_last_close": 763.96,
-   "spy_sma50": 768.4,
-   "spy_sma20": 770.72,
-   "spy_sma20_5_sessions_ago": 771.11,
-   "spy_pct_above_sma50": 0.099,
-   "spy_intraday_change_pct": -1.3,
-   "spy_source": "get_stock_bars SPY 1Day feed=sip, 71 sessions to 2026-10-20",
-   "btc_mid": 79562.09,
-   "btc_sma20_daily": 82256.71,
-   "btc_pct_vs_sma20": -3.28,
-   "btc_source": "get_crypto_bars BTC/USD 1Day days=30 (20 closed bars 2026-10-06..10-25) + get_crypto_latest_quote loc=us 2026-10-26T03:20:58Z",
-   "computed": "2026-10-26T03:25:00Z"
+   "spy_last_close": 765.37,
+   "spy_sma50": 767.59,
+   "spy_sma20": 770.14,
+   "spy_sma20_5_sessions_ago": 770.83,
+   "spy_pct_above_sma50": -0.289,
+   "spy_intraday_change_pct": 0.54,
+   "spy_source": "get_stock_bars SPY 1Day (sip default), 70 closed sessions to 2026-10-26; live price from get_stock_snapshot feed=iex",
+   "btc_mid": 80456.37,
+   "btc_sma20_daily": 81979.51,
+   "btc_pct_vs_sma20": -1.86,
+   "btc_source": "get_crypto_bars BTC/USD 1Day days=30 (20 closed bars 2026-10-07..10-26) + get_crypto_latest_quote loc=us 2026-10-27T16:45:19Z",
+   "computed": "2026-10-27T16:50:00Z"
   },
-  "computed": "2026-10-26T03:25:00Z"
+  "computed": "2026-10-27T16:50:00Z"
  },
  "account_flags": {
   "status": "ACTIVE",
