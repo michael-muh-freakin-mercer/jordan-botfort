@@ -2,8 +2,8 @@
  "symbol": "BTC/USD",
  "timeframe": "1Day",
  "source": "get_crypto_bars (alpaca, days=30, timeframe=1Day)",
- "bar_boundary": "00:00 UTC; bars through 2026-10-27 closed; 2026-10-28 forming (excluded)",
- "fetched": "2026-10-28T16:35:00Z",
+ "bar_boundary": "00:00 UTC; bars through 2026-10-29 closed; 2026-10-30 forming (excluded)",
+ "fetched": "2026-10-30T01:16:00Z",
  "bars": [
   {
    "date": "2026-09-27",
@@ -128,6 +128,14 @@
   {
    "date": "2026-10-27",
    "close": 80808.115
+  },
+  {
+   "date": "2026-10-28",
+   "close": 81254.0525
+  },
+  {
+   "date": "2026-10-29",
+   "close": 77805.6655
   }
  ]
 }
