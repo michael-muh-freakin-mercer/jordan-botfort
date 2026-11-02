@@ -1,6 +1,6 @@
 {
- "ts": "2026-10-30T19:50:00Z",
- "run_id": "20261030T194500Z-hourly",
+ "ts": "2026-11-02T08:20:00Z",
+ "run_id": "20261102T081500Z-overnight",
  "account_masked": "***GU2S",
  "basis": "virtual",
  "equity_usd": 48.5273,
@@ -29,13 +29,14 @@
    "spy_intraday_change_pct": -2.07,
    "spy_live": 753.53,
    "spy_source": "get_stock_bars SPY 1Day sip, 78 closed sessions to 2026-10-29; live from get_stock_snapshot feed=iex",
-   "btc_mid": 76516.65,
-   "btc_sma20_daily": 81596.7,
-   "btc_pct_vs_sma20": -6.23,
-   "btc_source": "daily cache 10-30 01:15Z + get_crypto_latest_quote loc=us 2026-10-30T19:45:28Z",
-   "computed": "2026-10-30T19:50:00Z"
+   "btc_mid": 78025.1,
+   "btc_sma20_daily": 80823.58,
+   "btc_pct_vs_sma20": -3.46,
+   "btc_source": "get_crypto_bars 1Day refreshed 2026-11-02T08:16Z (closed bars to 11-01) + get_crypto_latest_quote loc=us 2026-11-02T08:15:43Z",
+   "computed": "2026-10-30T19:50:00Z",
+   "equity_note": "equity regime not re-evaluated overnight (market closed); values above are from 2026-10-30"
   },
-  "computed": "2026-10-30T19:50:00Z"
+  "computed": "2026-11-02T08:20:00Z"
  },
  "account_flags": {
   "status": "ACTIVE",
