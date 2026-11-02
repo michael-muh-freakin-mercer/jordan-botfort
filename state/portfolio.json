@@ -1,6 +1,6 @@
 {
- "ts": "2026-11-02T08:20:00Z",
- "run_id": "20261102T081500Z-overnight",
+ "ts": "2026-11-02T14:50:00Z",
+ "run_id": "20261102T144500Z-hourly",
  "account_masked": "***GU2S",
  "basis": "virtual",
  "equity_usd": 48.5273,
@@ -17,26 +17,25 @@
  "entries_today": 0,
  "entries_paused_until": null,
  "regime": {
-  "risk_on_equity": true,
+  "risk_on_equity": false,
   "risk_on_crypto": false,
   "high_vol": false,
   "inputs": {
-   "spy_last_close": 769.36,
-   "spy_sma50": 767.632,
-   "spy_sma20": 771.164,
-   "spy_sma20_5_sessions_ago": 770.719,
-   "spy_pct_above_sma50": 0.225,
-   "spy_intraday_change_pct": -2.07,
-   "spy_live": 753.53,
-   "spy_source": "get_stock_bars SPY 1Day sip, 78 closed sessions to 2026-10-29; live from get_stock_snapshot feed=iex",
-   "btc_mid": 78025.1,
+   "spy_last_close": 755.72,
+   "spy_sma50": 767.4944,
+   "spy_sma20": 770.468,
+   "spy_sma20_5_sessions_ago": 770.1505,
+   "spy_pct_above_sma50": -1.534,
+   "spy_intraday_change_pct": 0.55,
+   "spy_live": 759.88,
+   "spy_source": "get_stock_bars SPY 1Day sip, 76 closed sessions to 2026-10-30 (cache refreshed this run; earlier caches lacked the 10-30 close); live from get_stock_snapshot feed=iex",
+   "btc_mid": 77765.39,
    "btc_sma20_daily": 80823.58,
-   "btc_pct_vs_sma20": -3.46,
+   "btc_pct_vs_sma20": -3.78,
    "btc_source": "get_crypto_bars 1Day refreshed 2026-11-02T08:16Z (closed bars to 11-01) + get_crypto_latest_quote loc=us 2026-11-02T08:15:43Z",
-   "computed": "2026-10-30T19:50:00Z",
-   "equity_note": "equity regime not re-evaluated overnight (market closed); values above are from 2026-10-30"
+   "computed": "2026-11-02T14:50:00Z"
   },
-  "computed": "2026-11-02T08:20:00Z"
+  "computed": "2026-11-02T14:50:00Z"
  },
  "account_flags": {
   "status": "ACTIVE",
