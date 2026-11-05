@@ -1,6 +1,6 @@
 {
- "ts": "2026-11-05T15:46:00Z",
- "run_id": "20261105T154500Z-hourly",
+ "ts": "2026-11-05T16:46:00Z",
+ "run_id": "20261105T164500Z-hourly",
  "account_masked": "***GU2S",
  "basis": "virtual",
  "equity_usd": 48.5273,
@@ -19,23 +19,23 @@
  "regime": {
   "risk_on_equity": false,
   "risk_on_crypto": false,
-  "high_vol": false,
+  "high_vol": true,
   "inputs": {
    "spy_last_close": 766.81,
    "spy_sma50": 767.058,
    "spy_sma20": 767.574,
    "spy_sma20_5_sessions_ago": 770.895,
    "spy_pct_above_sma50": -0.03,
-   "spy_intraday_change_pct": -2.94,
-   "spy_live": 744.2,
+   "spy_intraday_change_pct": -3.2,
+   "spy_live": 742.165,
    "spy_source": "SPY.json refreshed 2026-11-05 (sip bars to 11-04); live from get_stock_snapshot feed=iex",
-   "btc_mid": 76208.25,
+   "btc_mid": 76340.74,
    "btc_sma20_daily": 80205.97,
-   "btc_pct_vs_sma20": -4.98,
+   "btc_pct_vs_sma20": -4.82,
    "btc_source": "get_crypto_bars 1Day (20 closed bars to 11-04) + get_crypto_latest_quote loc=us 2026-11-05T14:45:23Z",
-   "computed": "2026-11-05T15:46:00Z"
+   "computed": "2026-11-05T16:46:00Z"
   },
-  "computed": "2026-11-05T15:46:00Z"
+  "computed": "2026-11-05T16:46:00Z"
  },
  "account_flags": {
   "status": "ACTIVE",
