@@ -89,3 +89,5 @@
 [2026-11-09T02:15:00Z] overnight starting (model claude-sonnet-5-5, run 20261109T021500Z-overnight)
 [2026-11-09T02:16:11Z] overnight finished (exit 0)
 [2026-11-09T08:15:00Z] overnight starting (model claude-sonnet-5-5, run 20261109T081500Z-overnight)
+[2026-11-09T08:16:21Z] overnight finished (exit 0)
+[2026-11-09T14:45:00Z] hourly starting (model claude-sonnet-5-5, run 20261109T144500Z-hourly)
