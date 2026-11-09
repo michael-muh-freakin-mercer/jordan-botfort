@@ -1,4 +1,4 @@
-# Needs Michael - updated 2026-11-06T19:46Z
+# Needs Michael - updated 2026-11-09T02:17Z
 - [2026-10-20 23:55Z] MEDIUM  Trading starts at the next scheduled run. `operating_mode` is `paper` and capabilities are now verified, so the 2026-10-21 runs will place real paper orders. To read `reports/first-run-report.md` before any order, set `operating_mode` to `discovery` in `state/authorization.json` now; set it back to `paper` when you are ready.
 - [2026-10-20 23:55Z] INFO  Data feed is IEX for real-time quotes; consolidated (SIP) data is 15 minutes delayed for snapshots and fine for historical bars. Volume tests use SIP on both sides; spread checks use IEX on both sides and may look wider than NBBO. Outside the session the IEX ask shows 0, so no order can be priced then (by design).
 - [2026-10-20 23:55Z] INFO  Untested until the first order: fractional **limit** orders (documented as supported with time in force `day`; the same docs page also says market only) and whether paper charges crypto fees. If the first fractional limit order is rejected, the agent will log it and write ATTENTION; the fix would be `fractional_limit_supported: false` in `state/capabilities.json` via a re-run of first-run, or your edit.
@@ -12,3 +12,4 @@
 
 - [2026-11-06 19:10Z] INFO  Still risk_off on both sleeves (SPY live 738.52, +0.69 pct; BTC 75668 vs SMA20 79929, -5.33 pct). 3b candidates SKIN (31 pct IEX spread) and LASC (stale, thin) fail. No positions, no orders, virtual equity 48.53 USD (paper).
 - [2026-11-06 19:46Z] INFO  Still risk_off on both sleeves (SPY live 737.64, +0.57 pct; BTC 75667 vs SMA20 79929, -5.33 pct). 3b candidates SKIN (32 pct IEX spread) and LASC (1.14 pct, thin) fail. No positions, no orders, virtual equity 48.53 USD (paper).
+- [2026-11-09 02:17Z] INFO  Overnight run: crypto still risk_off (BTC 75122 vs SMA20 78980, -4.88 pct; BTC hit 73530 in the 11-08 21:00Z hour). No positions, no orders, virtual equity 48.53 USD (paper). Equity untouched (market closed).

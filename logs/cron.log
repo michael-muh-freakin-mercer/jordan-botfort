@@ -79,3 +79,5 @@
 [2026-11-06T19:09:33Z] hourly skipped: another run holds the lock
 [2026-11-06T19:10:23Z] hourly finished (exit 0)
 [2026-11-06T19:45:00Z] hourly starting (model claude-sonnet-5-5, run 20261106T194500Z-hourly)
+[2026-11-06T19:45:47Z] hourly finished (exit 0)
+[2026-11-09T02:15:00Z] overnight starting (model claude-sonnet-5-5, run 20261109T021500Z-overnight)
