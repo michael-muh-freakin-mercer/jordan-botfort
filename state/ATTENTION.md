@@ -12,4 +12,4 @@
 
 - [2026-11-06 19:10Z] INFO  Still risk_off on both sleeves (SPY live 738.52, +0.69 pct; BTC 75668 vs SMA20 79929, -5.33 pct). 3b candidates SKIN (31 pct IEX spread) and LASC (stale, thin) fail. No positions, no orders, virtual equity 48.53 USD (paper).
 - [2026-11-06 19:46Z] INFO  Still risk_off on both sleeves (SPY live 737.64, +0.57 pct; BTC 75667 vs SMA20 79929, -5.33 pct). 3b candidates SKIN (32 pct IEX spread) and LASC (1.14 pct, thin) fail. No positions, no orders, virtual equity 48.53 USD (paper).
-- [2026-11-09 02:17Z] INFO  Overnight run: crypto still risk_off (BTC 75122 vs SMA20 78980, -4.88 pct; BTC hit 73530 in the 11-08 21:00Z hour). No positions, no orders, virtual equity 48.53 USD (paper). Equity untouched (market closed).
+- [2026-11-09 08:17Z] INFO  Overnight run: crypto still risk_off (BTC 73807 vs SMA20 78980, -6.55 pct; 24h -2.71 pct, 7d -5.32 pct). No positions, no orders, virtual equity 48.53 USD (paper). Equity untouched (market closed).
